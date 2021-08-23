@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>VErification</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                font-family: sans-serif;
+                background: #18182a;
+            }
+
+            .box {
+                width: 300px;
+                padding: 40px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: #191919;
+                text-align: center;
+            }
+
+            .box h2 {
+                color: white;
+                text-transform: uppercase;
+                font-weight: 500;
+            }
+
+            .box input[type="text"],
+            .box input[type="email"],
+            .a {
+                border: 0;
+                background: none;
+                display: block;
+                margin: 20px auto;
+                text-align: center;
+                border: 2px solid cadetblue;
+                padding: 14px 10px;
+                width: 200px;
+                outline: none;
+                color: white;
+                border-radius: 24px;
+                transition: 0.25s;
+            }
+
+            .a {
+                background-color: cadetblue;
+                color: black;
+            }
+
+            .box input[type="text"]:focus,
+            .box input[type="password"]:focus {
+                width: 280px;
+                border-color: cadetblue;
+            }
+
+            .box input[type="submit"] {
+                border: 0;
+                background: none;
+                display: block;
+                margin: 20px auto;
+                text-align: center;
+                border: 2px solid rgb(4, 88, 84);
+                padding: 14px 40px;
+                outline: none;
+                color: white;
+                border-radius: 24px;
+                transition: 0.25s;
+                cursor: pointer;
+            }
+
+            .box input[type="submit"]:hover {
+                background: cadetblue;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <form class="box" action="/register/verify" method="post">
+            <h2>Verification </h2>
+            <input id="verify" name="email" type="email" placeholder="Registered Email" required>
+
+            <input id="verifyevent" name="event" type="text" placeholder="Registered Event" required>
+
+
+            <button class="a" type=" submit">Verify</button>
+        </form>
+    </body>
+
+</html>

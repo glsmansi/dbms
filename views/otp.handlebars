@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            @import url("https://fonts.googleapis.com/css?family=Raleway:200");
+            @import url("https://fonts.googleapis.com/css?family=Work+Sans:400,700,900");
+
+            body,
+            html {
+                height: 100%;
+                margin: 5em 2em 2em 2em;
+                font-family: "Raleway", sans-serif;
+                font-weight: 200;
+            }
+
+            body {
+                background-color: #0f0f1a;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+            }
+
+            .digit-group input {
+                width: 30px;
+                height: 50px;
+                background-color: #18182a;
+                border: none;
+                line-height: 50px;
+                text-align: center;
+                font-size: 24px;
+                font-family: "Raleway", sans-serif;
+                font-weight: 200;
+                color: white;
+                margin: 0 2px;
+            }
+
+            .digit-group .splitter {
+                padding: 0 5px;
+                color: white;
+                font-size: 24px;
+            }
+
+            .prompt {
+                margin-bottom: 20px;
+                font-size: 20px;
+                color: white;
+            }
+
+            body {
+                font-family: "Work Sans", sans-serif;
+                background: #111;
+                text-align: center;
+            }
+
+            .wrapper {
+                width: 100vw;
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-end;
+            }
+
+            .button {
+                touch-callout: none;
+                user-select: none;
+                display: inline-block;
+                border: 0.2em solid;
+                position: relative;
+                cursor: pointer;
+                overflow: hidden;
+                opacity: 0.6;
+                position: relative;
+                bottom: 250px;
+                left: 10px;
+                color: #FFF;
+            }
+
+            .button__text {
+                display: block;
+                padding: 1em 2em;
+                text-transform: uppercase;
+                font-weight: bold;
+            }
+
+            .button__text:before {
+                content: attr(title);
+            }
+
+            .button__text--bis {
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                transform: translateX(-1em);
+                opacity: 0;
+            }
+
+            .button__mask {
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: white;
+                transform: translateX(-100%) rotate(45deg);
+                transition: all 0.3s;
+            }
+
+            .button:hover {
+                opacity: 1;
+            }
+
+            .button:hover .button__text {
+                animation: fx-text 0.3s ease-out;
+            }
+
+            .button:hover .button__text--bis {
+                animation: fx-text-bis 0.3s ease-out;
+            }
+
+            .button:hover .button__mask {
+                animation: fx-mask 0.3s ease-out;
+            }
+
+            .button:active {
+                opacity: 1;
+                background: white;
+                color: inherit;
+            }
+
+            @keyframes fx-mask {
+                0% {
+                    transform: translateX(-100%) rotate(45deg);
+                }
+
+                100% {
+                    transform: translateX(100%) rotate(45deg);
+                }
+            }
+
+            @keyframes fx-text {
+                0% {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+
+                100% {
+                    transform: translateX(1em);
+                    opacity: 0;
+                }
+            }
+
+            @keyframes fx-text-bis {
+                0% {
+                    transform: translateX(-1em);
+                    opacity: 0;
+                }
+
+                100% {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="prompt">
+            OTP has been send to Email ID
+            <br>
+            Kindly enter the OTP
+        </div>
+        <form action="/validate" method="POST" class="digit-group" data-group-name="digits" data-autosubmit="false">
+            <input type="text" id="digit-1" name="otp" data-next="digit-2" />
+            <input type="text" id="digit-2" name="otp" data-next="digit-3" data-previous="digit-1" />
+            <input type="text" id="digit-3" name="otp" data-next="digit-4" data-previous="digit-2" />
+            <input type="text" id="digit-4" name="otp" data-next="digit-5" data-previous="digit-3" />
+            <div class="wrapper">
+                <button>
+                    <div class="button">
+                        <span class="button__mask"></span>
+                        <span class="button__text">Send</span>
+                    </div>
+                </button>
+
+            </div>
+
+        </form>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'>
+        </script>
+        <script>
+            $('.digit-group').find('input').each(function () {
+                $(this).attr('maxlength', 1);
+                $(this).on('keyup', function (e) {
+                    var parent = $($(this).parent());
+
+                    if (e.keyCode === 8 || e.keyCode === 37) {
+                        var prev = parent.find('input#' + $(this).data('previous'));
+
+                        if (prev.length) {
+                            $(prev).select();
+                        }
+                    } else if ((e.keyCode >= 48 && e.keyCode <= 57) || (e.keyCode >= 65 && e.keyCode <= 90) || (e.keyCode >= 96 &&
+                        e.keyCode <= 105) || e.keyCode === 39) {
+                        var next = parent.find('input#' + $(this).data('next')); if
+                            (next.length) { $(next).select(); } else { if (parent.data('autosubmit')) { parent.submit(); } }
+                    }
+                });
+            }); 
+        </script>
+        </script>
+    </body>
+
+</html>

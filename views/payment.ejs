@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Add Data</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                font-family: sans-serif;
+                background: #18182a;
+            }
+
+            .box {
+                width: 300px;
+                padding: 40px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: #191919;
+                text-align: center;
+            }
+
+            .box h2 {
+                color: white;
+                text-transform: uppercase;
+                font-weight: 500;
+            }
+
+            .box input[type="text"],
+            .box input[type="email"],
+            .a {
+                border: 0;
+                background: none;
+                display: block;
+                margin: 20px auto;
+                text-align: center;
+                border: 2px solid cadetblue;
+                padding: 14px 10px;
+                width: 200px;
+                outline: none;
+                color: white;
+                border-radius: 24px;
+                transition: 0.25s;
+            }
+
+            .a {
+                background-color: cadetblue;
+                color: black;
+            }
+
+            .box input[type="text"]:focus,
+            .box input[type="password"]:focus {
+                width: 280px;
+                border-color: cadetblue;
+            }
+
+            .box input[type="submit"] {
+                border: 0;
+                background: none;
+                display: block;
+                margin: 20px auto;
+                text-align: center;
+                border: 2px solid rgb(4, 88, 84);
+                padding: 14px 40px;
+                outline: none;
+                color: white;
+                border-radius: 24px;
+                transition: 0.25s;
+                cursor: pointer;
+            }
+
+            .box input[type="submit"]:hover {
+                background: cadetblue;
+            }
+
+            #pay {
+                color: white;
+                text-decoration: none;
+            }
+
+            #option {
+                color: white;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <form class="box" action="/register/payment" method="post">
+            <h2>Payment Page </h2>
+            <div id="option">
+                <select readonly class="a">
+                    <option>CSE fests</option>
+                    <option>code wars : Rs 200</option>
+                    <option>qr hunt : Rs 200</option>
+                    <option>Logo Designing : Rs 200</option>
+                    <option>Pair Programming : Rs 200</option>
+                    <option>Google Hunt : Rs 200</option>
+                    <option>Mock Placement : Rs 200</option>
+                    <option>Blind Coding : Rs 200</option>
+                    <option>Tech Quiz : Rs 200</option>
+                    <option>PUBG Mobile : Rs 200</option>
+                    <option>Mobile Photography : Rs 200</option>
+                    <option>TV Show Quiz : Rs 200</option>
+                    <option>Beg-Borrow-Steal : Rs 200</option>
+                    <option>Mini Basketball : Rs 200</option>
+                </select>
+                <select readonly class="a">
+                    <option>ISE fests</option>
+                    <option>code wars : Rs 200</option>
+                    <option>qr hunt : Rs 200</option>
+                    <option>Logo Designing : Rs 200</option>
+                    <option>Pair Programming : Rs 200</option>
+                    <option>Google Hunt : Rs 200</option>
+
+                </select><select readonly class="a">
+                    <option>ECE fests</option>
+                    <option>code wars : Rs 200</option>
+                    <option>qr hunt : Rs 200</option>
+                    <option>Logo Designing : Rs 200</option>
+                    <option>Pair Programming : Rs 200</option>
+
+                </select><select readonly class="a">
+                    <option>CIVIL fests</option>
+                    <option>code wars : Rs 200</option>
+                    <option>qr hunt : Rs 200</option>
+                    <option>Logo Designing : Rs 200</option>
+                    <option>Pair Programming : Rs 200</option>
+
+                </select><select readonly class="a">
+                    <option>MECH fests</option>
+                    <option>code wars : Rs 200</option>
+                    <option>qr hunt : Rs 200</option>
+                    <option>Logo Designing : Rs 200</option>
+                    <option>Pair Programming : Rs 200</option>
+
+                </select><select readonly class="a">
+                    <option>EI fests</option>
+                    <option>code wars : Rs 200</option>
+                    <option>qr hunt : Rs 200</option>
+                    <option>Logo Designing : Rs 200</option>
+                    <option>Pair Programming : Rs 200</option>
+
+                </select>
+            </div>
+            <input type="text" placeholder="Amount" required>
+
+            <button class="a" type=" submit">Pay</button>
+
+
+        </form>
+
+        <!-- <form action="/">
+            <button class=a type="submit">Pay Later</button>>
+        </form> -->
+
+    </body>
+
+</html>

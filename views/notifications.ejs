@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>NOTIFICATION</title>
+        <style>
+            @import url("https://fonts.googleapis.com/css?family=Raleway:200");
+            @import url("https://fonts.googleapis.com/css?family=Work+Sans:400,700,900");
+
+            body,
+            html {
+                height: 100%;
+                margin: 5em 2em 2em 2em;
+                font-family: "Raleway", sans-serif;
+                font-weight: 200;
+            }
+
+            body {
+                background-color: #18182a;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+            }
+
+            .flex-container {
+                display: flex;
+                flex-direction: column;
+                min-height: 100%;
+                padding: 1px;
+            }
+
+            .bk {
+                flex: 1;
+                background: #18182a;
+                filter: blur(3px);
+                -webkit-filter: blur(4px);
+                transform: scale(1.1);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+                /*   height: 100%; */
+                padding: 0;
+            }
+
+            .textbox {
+                background-color: rgb(0, 0, 0);
+                /* Fallback color */
+                background-color: rgba(0, 0, 0, 0.4);
+                /* Black w/opacity/see-through */
+                color: white;
+                border: 3px solid #f1f1f1;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 2;
+                width: 80%;
+                padding: 20px;
+                text-align: center;
+                line-height: 1em;
+            }
+
+            #line-h {
+                line-height: 1.7em;
+            }
+
+            .digit-group input {
+                width: 30px;
+                height: 50px;
+                background-color: #18182a;
+                border: none;
+                line-height: 50px;
+                text-align: center;
+                font-size: 24px;
+                font-family: "Raleway", sans-serif;
+                font-weight: 200;
+                color: white;
+                margin: 0 2px;
+            }
+
+            .digit-group .splitter {
+                padding: 0 5px;
+                color: white;
+                font-size: 24px;
+            }
+
+            .prompt {
+                margin-bottom: 20px;
+                font-size: 20px;
+                color: white;
+            }
+
+            body {
+                font-family: "Work Sans", sans-serif;
+                background: #18182a;
+                text-align: center;
+            }
+
+            .wrapper {
+                width: 100vw;
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-end;
+            }
+
+            .button {
+                touch-callout: none;
+                user-select: none;
+                display: inline-block;
+                border: 0.2em solid;
+                position: relative;
+                cursor: pointer;
+                overflow: hidden;
+                opacity: 0.6;
+                position: relative;
+                bottom: 350px;
+                left: 10px;
+                color: #FFF;
+            }
+
+            .button__text {
+                display: block;
+                padding: 1em 2em;
+                text-transform: uppercase;
+                font-weight: bold;
+            }
+
+            .button__text:before {
+                content: attr(title);
+            }
+
+            .button__text--bis {
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                transform: translateX(-1em);
+                opacity: 0;
+            }
+
+            .button__mask {
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: white;
+                transform: translateX(-100%) rotate(45deg);
+                transition: all 0.3s;
+            }
+
+            .button:hover {
+                opacity: 1;
+            }
+
+            .button:hover .button__text {
+                animation: fx-text 0.3s ease-out;
+            }
+
+            .button:hover .button__text--bis {
+                animation: fx-text-bis 0.3s ease-out;
+            }
+
+            .button:hover .button__mask {
+                animation: fx-mask 0.3s ease-out;
+            }
+
+            .button:active {
+                opacity: 1;
+                background: white;
+                color: inherit;
+            }
+
+            @keyframes fx-mask {
+                0% {
+                    transform: translateX(-100%) rotate(45deg);
+                }
+
+                100% {
+                    transform: translateX(100%) rotate(45deg);
+                }
+            }
+
+            @keyframes fx-text {
+                0% {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+
+                100% {
+                    transform: translateX(1em);
+                    opacity: 0;
+                }
+            }
+
+            @keyframes fx-text-bis {
+                0% {
+                    transform: translateX(-1em);
+                    opacity: 0;
+                }
+
+                100% {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <form action="/admin/table/notifications" method="post">
+            <div class="prompt">
+                Send notification to all the participants
+                <br>
+
+            </div>
+            <textarea name="msg" rows="12" cols="50">
+
+                </textarea>
+
+
+            <div class="wrapper">
+                <button>
+                    <div class="button">
+                        <span class="button__mask"></span>
+                        <span class="button__text">Send</span>
+                    </div>
+                </button>
+
+            </div>
+        </form>
+
+    </body>
+
+</html>
