@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const path = require("path");
+const port = process.env.PORT || 5000;
 // const registerRoute = require("./routes/register");
 var db = require("./db/db");
 var ejs = require("ejs");
@@ -637,8 +638,8 @@ app.get("/admin/table/event_details", (req, res) => {
 //   })
 // })
 
-app.listen(5000, (err) => {
+app.listen(port, (err) => {
   if (err) throw err;
 
-  console.log(`Server is up and running at 5000`);
+  console.log(`Server is up and running at ${port}`);
 });
