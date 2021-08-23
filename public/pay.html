@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>CodePen - Cash loader CSS animation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="../css/pay.css">
+
+  </head>
+
+  <body>
+    <!-- partial:index.partial.html -->
+    <div class="loader">
+      <div class="loader__image">
+        <a href="cash.html">
+          <div class="loader__coin">
+            <img src="https://www.dropbox.com/s/fzc3fidyxqbqhnj/loader-coin.png?raw=1" alt="">
+          </div>
+          <div class="loader__hand">
+            <img src="https://www.dropbox.com/s/y8uqvjn811z6npu/loader-hand.png?raw=1" alt="">
+          </div>
+        </a>
+      </div>
+    </div>
+    <!-- partial -->
+    <script>
+      setTimeout(function () {
+        window.location.href = 'cash.html';
+      }, 5000);
+    </script>
+  </body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="../css/login.css">
+    </head>
+
+    <body>
+
+        <div class="login-box">
+            <h2>REGISTRATION FORM</h2>
+            <form action="/register" method="POST">
+                <div class="user-box">
+                    <input type="text" name="NAME" required>
+                    <label>Name</label>
+                </div>
+                <div class="user-box">
+                    <input type="email" name="EMAIL" required>
+                    <label>Email ID</label>
+                </div>
+                <div class="user-box">
+                    <input type="text" name="COLLEGE_NAME" required>
+                    <label>College Name</label>
+                </div>
+                <div class="user-box">
+                    <input type="text" name="PHNO" required>
+                    <label>Phone no.</label>
+                </div>
+                <div class="user-box">
+                    <input type="text" name="BRANCH" required>
+                    <label>Branch</label>
+                </div>
+                <div class="user-box">
+
+                    <input type="text" name="FEST" value="CSE FEST" readonly>
+
+
+                </div>
+                <div class="user-box">
+                    <select class="option" name="EVENT_NAME" required>
+                        <option disabled="disable" selected="selected">--Choose Event--</option>
+                        <option class="a">Code Wars</option>
+                        <option class="a">QR Hunt</option>
+                        <option class="a">Logo Designing</option>
+                        <option class="a">Pair Programming</option>
+                        <option class="a">Google Hunt</option>
+                        <option class="a">Mock Placement</option>
+                        <option class="a">Blind Coding </option>
+                        <option class="a">Tech Quiz</option>
+                        <option class="a">PUBG Mobile</option>
+                        <option class="a">Mobile Photography</option>
+                        <option class="a">TV Show Quiz</option>
+                        <option class="a">Basketball</option>
+                    </select>
+                </div>
+
+
+                <button class="b">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Submit
+                </button>
+            </form>
+        </div>
+    </body>
+
+</html>
+<script src="../jslogin.js"></script>
