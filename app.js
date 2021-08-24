@@ -32,7 +32,7 @@ app.use(bodyParser.json());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 // console.log(path.join(__dirname, "../public"));
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "./public")));
 app.use(methodOverride("_method"));
 
 // app.use(loginnodeRoute)
